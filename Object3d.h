@@ -107,6 +107,11 @@ public: // 静的メンバ関数
     /// <param name="move">移動量</param>
 	static void CameraMoveEyeVector(XMFLOAT3 move);
 
+	//ビルボード行列
+	static XMMATRIX matBillboard;
+	//Y軸回りビルボード行列
+	static XMMATRIX matBillboardY;
+
 private: // 静的メンバ変数
 	// デバイス
 	static ID3D12Device* device;

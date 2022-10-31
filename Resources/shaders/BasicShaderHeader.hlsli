@@ -1,13 +1,20 @@
+//ƒWƒIƒƒgƒŠƒVƒF[ƒ_‚©‚çƒsƒNƒZƒ‹ƒVƒF[ƒ_‚Ö‚Ìo—Í
+struct GSOutput
+{
+	float4 svpos:SV_POSITION;    //ƒVƒXƒeƒ€—p’¸“_À•W
+	float3 normal:NORMAL;        //–@üƒxƒNƒgƒ‹
+	float2 uv:TEXCOORD;          //uvü
+};
 cbuffer cbuff0 : register(b0)
 {
-	float4 color; // è‰²(RGBA)
-	matrix mat; // ï¼“ï¼¤å¤‰æ›è¡Œåˆ—
+	float4 color; // F(RGBA)
+	matrix mat; // ‚R‚c•ÏŠ·s—ñ
 };
 
-// é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‹ã‚‰ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã¸ã®ã‚„ã‚Šå–ã‚Šã«ä½¿ç”¨ã™ã‚‹æ§‹é€ ä½“
+// ’¸“_ƒVƒF[ƒ_[‚©‚çƒsƒNƒZƒ‹ƒVƒF[ƒ_[‚Ö‚Ì‚â‚èŽæ‚è‚ÉŽg—p‚·‚é\‘¢‘Ì
 struct VSOutput
 {
-	float4 svpos : SV_POSITION; // ã‚·ã‚¹ãƒ†ãƒ ç”¨é ‚ç‚¹åº§æ¨™
-	float3 normal :NORMAL; // æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
-	float2 uv  :TEXCOORD; // uvå€¤
+	float4 svpos : SV_POSITION; // ƒVƒXƒeƒ€—p’¸“_À•W
+	float3 normal :NORMAL; // –@üƒxƒNƒgƒ‹
+	float2 uv  :TEXCOORD; // uv’l
 };
