@@ -1,4 +1,4 @@
-#include"BasicShaderHeader.hlsli"
+#include"Particle.hlsli"
 
 //[maxvertexcount(3)]
 //void main(
@@ -86,10 +86,14 @@ void main(
 	//4点分まわす
 	for (uint i = 0; i < vnum; i++) {
 		//ワールド座標ベースで、ずらす
-		element.svpos = input[0].pos + offset_array[i];
+		//element.svpos = input[0].pos + offset_array[i];
+		// 中心からのオフセットをビルボード回転(モデル座標)
+		float4 offset = mul(matBillboard, offset_array[i]);
+		//オフセット分ずらす(ワールド座標)
+		element.svpos = input[0].pos + offset;
 		//ビュー、射影変換
 		element.svpos = mul(mat, element.svpos);
-		element.uv = float2(0.5f, 0.5f);
+		//element.uv = float2(0.5f, 0.5f);
 		element.uv = uv_array[i];
 		output.Append(element);
 	}
